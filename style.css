@@ -38,7 +38,7 @@ nav {
 }
 
 .nav-list li {
-  padding: .3rem;
+  padding: .5rem 1rem;
   
 }
 
@@ -49,11 +49,27 @@ nav {
   font-family: var(--font-primary);
   display: inline-block;
   /* border : 2px solid red ; */
-  padding: 1rem; 
+  padding: .5rem; 
   transition: .3s all;
+  position: relative;
 
 }
-.nav-link:hover {
+.nav-link::after{
+  content: "";
+  display: inline-block;
+  width: 0%;
+  height: 4px;
+  padding: 0;
+  position: absolute;
+  /* top: -5px; */
+  left: 0;
+  bottom: 0;
   background-color: var(--color-primary);
-  color: white;
+  transition: .1s all ease-out;
+
+
+}
+.nav-link:hover::after {
+  width: 100%;
+  
 }
