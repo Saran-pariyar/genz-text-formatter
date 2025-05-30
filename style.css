@@ -6,27 +6,30 @@
 
 :root {
   --color-primary: #004aad;
-  --color-secondary: #2ecc71; 
-  --font-primary: 'Arial', sans-serif;
-  --font-secondary: 'Courier New', monospace;
+  /* --color-secondary: #2ecc71; */
+  --font-primary: "Arial", sans-serif;
 }
-body{
+body {
   background-color: var(--color-primary);
+  height: 300vh;
 }
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem;
+  padding: 0.5rem 1rem;
   /* border : 2px solid red ;  */
   background-color: white;
+  /* position: relative; */
+  position: sticky;
+  top: 0;
 }
 
-.nav-logo-container {
+/* .nav-logo-container {
 }
 
 .nav-logo-link {
-}
+} */
 
 .nav-logo-img {
   height: 3rem;
@@ -38,8 +41,7 @@ nav {
 }
 
 .nav-list li {
-  padding: .5rem 1rem;
-  
+  padding: 0.5rem 1rem;
 }
 
 .nav-link {
@@ -49,27 +51,74 @@ nav {
   font-family: var(--font-primary);
   display: inline-block;
   /* border : 2px solid red ; */
-  padding: .5rem; 
-  transition: .3s all;
+  padding: 0.5rem;
+  transition: 0.3s all;
   position: relative;
-
 }
-.nav-link::after{
+
+.nav-link::after {
   content: "";
   display: inline-block;
   width: 0%;
   height: 4px;
   padding: 0;
   position: absolute;
-  /* top: -5px; */
   left: 0;
   bottom: 0;
   background-color: var(--color-primary);
-  transition: .1s all ease-out;
-
-
+  transition: 0.1s all ease-out;
 }
 .nav-link:hover::after {
   width: 100%;
-  
+}
+
+/* NAV ICON  */
+.nav-icon-section {
+  display: none;
+}
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border : 2px solid red ;  */
+}
+
+.nav-icon-line {
+  height: 6px;
+  width: 2rem;
+  background-color: var(--color-primary);
+  display: inline-block;
+  margin: 3px 0;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-list {
+    /* display: none; */
+    position: absolute;
+    /* top: -100%;
+    z-index: 1000;
+    color: white !important; */
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    max-height: 0%;
+    transition: 0.1s max-height;
+    /* display: block; */
+    z-index: 100;
+    /* border : 2px solid red ;  */
+  }
+  .show-nav-list {
+    max-height: 500px;
+  }
+
+  .nav-list li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-icon-section {
+    display: flex;
+  }
 }
