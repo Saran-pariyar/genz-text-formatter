@@ -92,6 +92,9 @@ nav {
 }
 
 @media screen and (max-width: 960px) {
+  .nav-logo-img {
+    height: 4rem;
+  }
   .nav-list {
     /* display: none; */
     position: absolute;
@@ -121,4 +124,24 @@ nav {
   .nav-icon-section {
     display: flex;
   }
+}
+
+/* Hero section  */
+
+.hero-section {
+}
+
+.hero-container {
+}
+
+.hero-heading {
+}
+
+.hero-desc {
+}
+
+.hero-btn-section {
+}
+
+.hero-btn {
 }
