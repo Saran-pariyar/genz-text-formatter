@@ -185,3 +185,24 @@ nav {
     padding: 0.5rem 0.8rem;
   }
 }
+
+
+/* formatter section  */
+
+.text-formatter-section{
+display: flex;
+}
+
+.input-container{
+  width: 50%;
+  border : 2px solid red ; 
+}
+
+
+.input-textarea{}
+
+.input-btn-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
