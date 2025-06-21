@@ -111,6 +111,7 @@ nav {
     transition: 0.1s max-height;
     /* display: block; */
     z-index: 100;
+    overflow: hidden;
     /* border : 2px solid red ;  */
   }
   .show-nav-list {
