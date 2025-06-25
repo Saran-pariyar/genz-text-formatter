@@ -18,3 +18,33 @@
   --btn-pink-bg: #DB2777;
 }
 
+body{
+  background-color: var(--hero-section-bg);
+  color: var(--text-color);
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 2rem;
+}
+
+.nav-logo{
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.nav-list{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-link{
+  color: white;
+  text-decoration: none ;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.nav-link:hover{
+  color: var(--heading-text-color);
+}
