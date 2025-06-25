@@ -1,37 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-  --color-primary: #004aad;
-  /* --color-secondary: #2ecc71; */
-  --font-primary: "Arial", sans-serif;
+ 
+  --text-color: #ffffff;
+  --heading-text-color: #EC4899;
+  --hero-section-bg: #1E1B2E;
+  --format-section-bg: #1E1B2E;
+  --btn-gray-bg:#374151;
+  --btn-pink-bg: #DB2777;
 }
 
-/* color  */
-
-/*
-
-#1e293b – dark slate blue (main background)
-
-#0f172a – deep navy (header/footer)
-
-#0e1629 – dark blue-black tone
-
-#172033 – muted steel blue
-
-#1c2739 – dark cool blue-gray
-
-#192335 – deep steel tone
-
-#141d30 – almost black-blue
-
-#161f32 – near midnight blue
-
-#182234 – another dark navy variant
-
-#162032 – subtle variant of the above
-
-*/
