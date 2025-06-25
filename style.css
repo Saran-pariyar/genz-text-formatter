@@ -21,17 +21,33 @@
 body{
   background-color: var(--hero-section-bg);
   color: var(--text-color);
+  height: 200vh;
 }
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .5rem 2rem;
+  position: sticky;
+  top: 0;
+  transition: .3s all;
+  border-bottom: 2px solid var(--hero-section-bg);
+  z-index: 1000;
+  backdrop-filter: blur(10px) ;
 }
+/* .navbar-bottom-border{
+  border-bottom: 2px solid var(--heading-text-color);
 
+} */
+.logo-container{
+  text-decoration: none;
+  display: inline-block;
+}
 .nav-logo{
   font-size: 2rem;
   font-weight: 800;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .nav-list{
@@ -47,4 +63,18 @@ nav{
 }
 .nav-link:hover{
   color: var(--heading-text-color);
+}
+
+.menu-icon-container{
+  border : 2px solid red ;
+display: flex;
+gap: .4rem;
+flex-direction: column;
+display: none;
+}
+
+.menu-icon-container span{
+  padding: .2rem 1.2rem;
+  background-color: white;
+
 }
