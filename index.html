@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typify - Enhanced Text Formatter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,11 +19,11 @@
             <h1 class="nav-logo">Typify</h1>
         </a>
 
-<div class="menu-icon-container">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+        <div class="menu-icon-container">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <div class="nav-list-container">
             <ul class="nav-list">
@@ -38,7 +40,24 @@
     <section class="hero-section">
         <h1 class="hero-heading">Welcome to Typify</h1>
         <p class="hero-description">The text formatter with modern features.</p>
-        <button  class="start-formatting-btn">Start Formatting</button>
+        <button class="start-formatting-btn pink-btn">Start Formatting</button>
+    </section>
+
+    <section class="text-format-section">
+        <div class="text-format-container">
+
+            <div class="format-input-container">
+                <textarea name="" id="" class="input-textarea" placeholder="Enter your text here..."></textarea>
+                <div class="format-input-btn-section">
+                    <button class="copy-btn pink-btn"> <i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="full-view-btn pink-btn"><i class="fa-solid fa-expand"></i> Open Full View</button>
+                    <button class="clear-btn"> <i class="fa-solid fa-xmark"></i> Clear</button>
+                </div>
+
+            </div>
+            <div class="format-options-container">s</div>
+
+        </div>
     </section>
 
     <script src="script.js"></script>

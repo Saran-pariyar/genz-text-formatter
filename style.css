@@ -13,7 +13,7 @@
   --text-white: #ffffff;
   --heading-text-color: #EC4899;
   --main-dark-blue-bg: #1E1B2E;
-  --format-section-bg: #1E1B2E;
+  --format-section-bg: #292638;
   --btn-gray-bg:#374151;
   --btn-pink-bg: #DB2777;
 }
@@ -74,7 +74,7 @@ nav{
 }
 
 .menu-icon-container{
-  border : 2px solid red ;
+  /* border : 2px solid red ; */
 display: flex;
 gap: .4rem;
 flex-direction: column;
@@ -107,18 +107,97 @@ display: none;
 
 }
 .start-formatting-btn{
-  border: 2px solid var(--btn-pink-bg);
+ 
+  
+  margin: .5rem 0;
+
+}
+
+
+
+.pink-btn{
+   border: 2px solid var(--btn-pink-bg);
   border-radius: 10px;
   color: var(--text-white);
   padding: .5rem 1rem;
   background-color: var(--btn-pink-bg);
   transition: .3s all;
-  margin: .5rem 0;
-
+  display: inline-block;
 }
 
-.start-formatting-btn:hover{
+.pink-btn:hover{
   background-color: transparent;
   color: var(--btn-pink-bg);
   cursor: pointer;
+}
+
+
+/* Text Format Section  */
+
+.text-format-section{
+
+  padding: 2rem 1rem;
+
+  
+}
+
+.text-format-container{
+  
+  background-color: var(--format-section-bg);
+  border-radius: 10px;
+  border: 2px solid var(--btn-gray-bg);
+  padding:  1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.format-input-container{
+flex: 1;
+}
+
+.input-textarea{
+  background: #1F2937;
+  border: 2px solid var(--btn-gray-bg);
+  border-radius: 5px;
+  /* height: 100%; */
+  min-height: 20rem;
+  width: 100%;
+  display: inline-block;
+  color: var(--text-white);
+  padding: .5rem;
+  min-width: 100%;
+}
+/* .input-textarea::placeholder{
+  color: var(--btn-gray-bg);
+  
+
+} */
+
+.format-options-container{
+  flex: 1;
+  border : 2px solid red ; 
+}
+
+.format-input-container button{
+  display: inline-block;
+  margin: .5rem;
+  
+}
+
+.clear-btn{
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  background-color: var(--btn-gray-bg);
+  color: var(--text-white);
+  transform: .3s all;
+  border: 2px solid var(--btn-gray-bg);
+}
+
+.clear-btn:hover{
+background-color: transparent;
+cursor: pointer;
+}
+
+.fa-solid{
+  padding-right: .1rem;
 }
