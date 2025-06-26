@@ -29,13 +29,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  position: sticky;
-  top: 0;
-  transition: 0.3s all;
+  /* position: sticky; */
+  /* top: 0; */
+
   border-bottom: 2px solid var(--main-dark-blue-bg);
   z-index: 1000;
 
   backdrop-filter: blur(10px);
+}
+#navbar{
+  transition: 1s all;
+  
 }
 /* .navbar-bottom-border{
   border-bottom: 2px solid var(--heading-text-color);
