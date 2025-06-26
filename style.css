@@ -213,35 +213,43 @@ nav {
 .basic-formatting-container {
 }
 
-.basic-format-heading {
-  color: var(--text-white);
+.format-heading {
+  /* color: var(--text-white); */
+  color: var(--heading-text-color);
   font-size: 1.2rem;
 }
 
-.basic-format-btn-container {
+.format-btn-container {
   /* border : 2px solid red ; */
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   /* border: 2px solid ; */
   margin-top: 1rem;
 }
 
-.basic-format-btn {
+.format-btn {
    border : 2px solid var(--text-white) ;
   color: var(--text-white); 
+  
   background-color: transparent;
   
   padding: .5rem 1rem;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 10px;
   transition: .3s all;
 }
 
-.basic-format-btn:hover{
+.format-btn:hover{
  border : 2px solid var(--btn-pink-bg) ; 
   color: var(--btn-pink-bg);
   background-color: var(--main-dark-blue-bg);
   cursor: pointer;
 
+}
+
+/* ADVANCED OPTION  */
+
+.advanced-formatting-container{
+  margin: 1.5rem 0;
 }
