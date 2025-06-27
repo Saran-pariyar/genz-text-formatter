@@ -13,10 +13,7 @@ window.addEventListener('scroll', () => {
     else {
         navbar.style.position = "sticky";
         navbar.style.top = 0;
-
-
     }
-
 
     lastScrollY = currentScrollY;
 
@@ -34,23 +31,27 @@ startFormattingBtn.addEventListener("click", () => {
 
 const formatButtons = document.querySelectorAll('.format-btn');
 
-// JFF
 
-function readOutLoud(text) {
-    const speech = new SpeechSynthesisUtterance();
-    speech.text = text;
-    speech.lang = 'en-US'; // or change it to 'en-GB', 'es-ES', etc.
-    speech.rate = 1.5; // set to 1.5 or 2 for faster speaking if needed
-    window.speechSynthesis.speak(speech);
+// modal scripts
+const modalContainer = document.querySelector("#modal-container")
+const resultTextarea = document.querySelector("#result-textarea")
+
+
+function openModal() {
+    const modalContainer = document.querySelector("#modal-container")
+    const htmlBody = document.querySelector("#body")
+
+    modalContainer.classList.toggle("display-flex")
+
+    htmlBody.classList.toggle("disable-scrolling")
+
+
 }
 
-formatButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        const btnId = e.target.id;
-        // console.log(`Button clicked: ${btnId}`);
-        readOutLoud("Ruko jara, sabar karo. Bolana dhaka muki nahi karneka. Still functionality add gareko chaina")
+const fullViewBtn = document.querySelector("#full-view-btn")
+const closeModalBtn = document.querySelector("#close-modal-btn")
 
-        // You can use a switch or if-else here based on btnId
-        // to trigger the right function
-    });
-});
+
+fullViewBtn.addEventListener("click", () => { openModal() })
+
+closeModalBtn.addEventListener("click", () => { openModal() })

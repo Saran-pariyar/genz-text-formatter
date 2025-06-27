@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="body">
 
     <nav id="navbar">
 
@@ -50,7 +50,7 @@
                 <textarea name="" id="" class="input-textarea" placeholder="Enter your text here..."></textarea>
                 <div class="format-input-btn-section">
                     <button class="copy-btn pink-btn"> <i class="fa-solid fa-copy"></i> Copy</button>
-                    <button class="full-view-btn pink-btn"><i class="fa-solid fa-expand"></i> Open Full View</button>
+                    <button id="full-view-btn" class="full-view-btn pink-btn"><i class="fa-solid fa-expand"></i> Open Full View</button>
                     <button class="clear-btn"> <i class="fa-solid fa-xmark"></i> Clear</button>
 
                     <button class="clear-btn"> <i class="fa-solid fa-eraser"></i> Clear Formattings</button>
@@ -98,6 +98,23 @@
 
         </div>
     </section>
+
+    <!-- MODAL SECTION  -->
+     <div class="modal-container" id="modal-container">
+        
+        <span id="close-modal-btn" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></span>
+
+        <div class="modal-content-section">
+            <textarea class="result-section" id="result-textarea">
+df
+
+
+
+
+            </textarea>
+            
+        </div>
+     </div>
 
     <script src="script.js"></script>
 </body>

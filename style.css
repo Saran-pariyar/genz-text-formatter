@@ -174,6 +174,7 @@ nav {
 .format-input-container button {
   display: inline-block;
   margin: 0.5rem;
+  margin-top: 1rem;
 }
 .format-input-container .copy-btn {
   margin-left: 0;
@@ -257,3 +258,65 @@ nav {
 .advanced-formatting-container{
   margin: 1.5rem 0;
 }
+
+
+/* MODAL SECTION */
+.modal-container{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  /* border : 2px solid red ; */
+  z-index: 1000;
+  padding: 2rem; 
+  top: 0;
+  left: 0;
+  /* transition: .5s all; */
+  backdrop-filter: blur(10px);
+  display : flex; 
+  justify-content: center; 
+  align-items : center; 
+  display: none;
+
+  
+}
+.disable-scrolling{
+  overflow-y: hidden;
+}
+.display-flex{
+  display: flex;
+}
+
+.close-modal-btn{
+  position: absolute;
+  color: var(--text-white);
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .3s all;
+}
+.close-modal-btn:hover{
+color: var(--btn-pink-bg);
+}
+.modal-content-section{
+  /* border : 2px solid red ;  */
+  padding: 1rem;
+}
+
+.result-section {
+  background: var(--text-white);
+  border: 2px solid var(--btn-gray-bg);
+  border-radius: 5px;
+  /* height: 100%; */
+  height: 70vh;
+  max-height: 70vh;
+  /* overflow-y: scroll; */
+  width: 90vw;
+  max-width: 90vw;
+
+  display: inline-block;
+  /* color: var(--text-white); */
+  padding: 0.5rem;
+  min-width: 100%;
+}
+
