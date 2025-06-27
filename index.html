@@ -47,7 +47,7 @@
         <div class="text-format-container">
 
             <div class="format-input-container">
-                <textarea name="" id="" class="input-textarea" placeholder="Enter your text here..."></textarea>
+                <div name="" id="basic-input" class="input-textarea" data-placeholder="Enter your text here..." contenteditable="true"></div>
                 <div class="format-input-btn-section">
                     <button class="copy-btn pink-btn"> <i class="fa-solid fa-copy"></i> Copy</button>
                     <button id="full-view-btn" class="full-view-btn pink-btn"><i class="fa-solid fa-expand"></i> Open Full View</button>
@@ -105,15 +105,19 @@
         <span id="close-modal-btn" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></span>
 
         <div class="modal-content-section">
-            <textarea class="result-section" id="result-textarea">
-df
+            <div class="result-section" id="result-textarea" contenteditable="true">
 
 
+            </div>
 
 
-            </textarea>
-            
+            <div class="modal-btn-container">
+            <button class="pink-btn modal-btn">Copy Plain Text</button>
+            <button class="pink-btn modal-btn">Copy with stylings</button>
+</div>
         </div>
+
+        
      </div>
 
     <script src="script.js"></script>

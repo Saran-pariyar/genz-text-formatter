@@ -55,3 +55,15 @@ const closeModalBtn = document.querySelector("#close-modal-btn")
 fullViewBtn.addEventListener("click", () => { openModal() })
 
 closeModalBtn.addEventListener("click", () => { openModal() })
+
+
+
+// show placeholder again if it's empty.
+
+const editableDiv = document.getElementById("basic-input");
+
+editableDiv.addEventListener("input", () => {
+  if (editableDiv.innerText.trim() === "") {
+    editableDiv.innerHTML = ""; // Ensure it's really empty
+  }
+});
