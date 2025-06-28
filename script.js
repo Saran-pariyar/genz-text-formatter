@@ -67,3 +67,31 @@ editableDiv.addEventListener("input", () => {
     editableDiv.innerHTML = ""; // Ensure it's really empty
   }
 });
+
+
+// FORMATTING 
+
+
+const normalInput = document.querySelector("#basic-input")
+
+const btnUpperCase = document.querySelector("#btn-uppercase")
+
+// const textData = "";
+const textData = editableDiv.innerText; // plain readable text
+// const htmlData = editableDiv.innerHTML; // raw HTML with styles
+let liveText;
+
+normalInput.addEventListener("input", ()=>{
+       liveText = editableDiv.innerText;
+//   const liveHtml = editableDiv.innerHTML;
+//   console.log("Plain Text:", liveText);
+//   console.log("HTML Data:", liveHtml);
+})
+
+// alert(textData)
+
+btnUpperCase.addEventListener("click", ()=>{
+    // normalInput.innerHTML = "<b>Hello world</b>!"
+
+    
+})
