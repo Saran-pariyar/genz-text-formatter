@@ -107,3 +107,34 @@ btnLowerCase.addEventListener("click", ()=>{
     
     
 })
+
+
+const btnCapitalize = document.querySelector("#btn-capitalize");
+
+btnCapitalize.addEventListener("click", () => {
+    const text = normalInput.innerText;
+    const result = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    normalInput.innerText = result;
+});
+
+
+const btnCapitalizeWords = document.querySelector("#btn-capitalize-words");
+
+btnCapitalizeWords.addEventListener("click", () => {
+    const text = normalInput.innerText;
+    const result = text
+        .toLowerCase()
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    normalInput.innerText = result;
+});
+
+
+const btnRemoveSpace = document.querySelector("#btn-remove-space");
+
+btnRemoveSpace.addEventListener("click", () => {
+    const text = normalInput.innerText;
+    const result = text.replace(/\s+/g, ' ').trim(); 
+    normalInput.innerText = result;
+});
