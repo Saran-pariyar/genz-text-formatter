@@ -74,7 +74,6 @@ editableDiv.addEventListener("input", () => {
 
 const normalInput = document.querySelector("#basic-input")
 
-const btnUpperCase = document.querySelector("#btn-uppercase")
 
 // const textData = "";
 const textData = editableDiv.innerText; // plain readable text
@@ -85,13 +84,26 @@ normalInput.addEventListener("input", ()=>{
        liveText = editableDiv.innerText;
 //   const liveHtml = editableDiv.innerHTML;
 //   console.log("Plain Text:", liveText);
+//   console.log(typeof(liveText))
 //   console.log("HTML Data:", liveHtml);
 })
 
 // alert(textData)
+const btnUpperCase = document.querySelector("#btn-uppercase")
 
 btnUpperCase.addEventListener("click", ()=>{
-    // normalInput.innerHTML = "<b>Hello world</b>!"
+    
+   const result =  liveText.toUpperCase();
+    normalInput.innerHTML = result;
+    
+    
+})
 
+const btnLowerCase = document.querySelector("#btn-lowercase")
+btnLowerCase.addEventListener("click", ()=>{
+    
+   const result =  liveText.toLowerCase();
+    normalInput.innerHTML = result;
+    
     
 })
