@@ -32,30 +32,6 @@ startFormattingBtn.addEventListener("click", () => {
 const formatButtons = document.querySelectorAll('.format-btn');
 
 
-// modal scripts
-const modalContainer = document.querySelector("#modal-container")
-const resultTextarea = document.querySelector("#result-textarea")
-
-
-function openModal() {
-    const modalContainer = document.querySelector("#modal-container")
-    const htmlBody = document.querySelector("#body")
-
-    modalContainer.classList.toggle("display-flex")
-
-    htmlBody.classList.toggle("disable-scrolling")
-
-
-}
-
-const fullViewBtn = document.querySelector("#full-view-btn")
-const closeModalBtn = document.querySelector("#close-modal-btn")
-
-
-fullViewBtn.addEventListener("click", () => { openModal() })
-
-closeModalBtn.addEventListener("click", () => { openModal() })
-
 
 
 // show placeholder again if it's empty.
@@ -75,6 +51,7 @@ editableDiv.addEventListener("input", () => {
 const normalInput = document.querySelector("#basic-input")
 
 
+
 // const textData = "";
 const textData = editableDiv.innerText; // plain readable text
 // const htmlData = editableDiv.innerHTML; // raw HTML with styles
@@ -82,10 +59,7 @@ let liveText;
 
 normalInput.addEventListener("input", ()=>{
        liveText = editableDiv.innerText;
-//   const liveHtml = editableDiv.innerHTML;
-//   console.log("Plain Text:", liveText);
-//   console.log(typeof(liveText))
-//   console.log("HTML Data:", liveHtml);
+
 })
 
 // alert(textData)
@@ -138,3 +112,88 @@ btnRemoveSpace.addEventListener("click", () => {
     const result = text.replace(/\s+/g, ' ').trim(); 
     normalInput.innerText = result;
 });
+
+
+
+
+// ADVANCED FORMAT OPTOINS 
+
+const btnLineBreakSentences = document.querySelector("#btn-line-break-sentences");
+
+btnLineBreakSentences.addEventListener("click", () => {
+    const text = normalInput.innerText;
+    // Split text into sentences using regex, keeping the punctuation
+        const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
+
+    // Join sentences with a newline character
+    const result = sentences.map(s => s.trim()).join('\n \n');
+    normalInput.innerText = result;
+});
+
+const btnBoldRandomLetters = document.querySelector("#btn-bold-random-letters");
+
+btnBoldRandomLetters.addEventListener("click", () => {
+    const text = normalInput.innerText;
+
+    function boldRandomLetters(str) {
+        const words = str.split(/\s+/);
+
+        function getRandomIndexes(length, count) {
+            const indexes = new Set();
+            while (indexes.size < count) {
+                indexes.add(Math.floor(Math.random() * length));
+            }
+            return Array.from(indexes);
+        }
+
+        return words.map(word => {
+            if (word.length <= 2) return word;
+
+            const boldCount = word.length >= 5 ? 3 : 2;
+            const indexesToBold = getRandomIndexes(word.length, boldCount);
+
+            let newWord = '';
+            for (let i = 0; i < word.length; i++) {
+                if (indexesToBold.includes(i)) {
+                    newWord += `<b>${word[i]}</b>`;
+                } else {
+                    newWord += word[i];
+                }
+            }
+            return newWord;
+        }).join(' ');
+    }
+
+    const result = boldRandomLetters(text);
+    normalInput.innerHTML = result; 
+});
+
+
+
+// modal scripts
+const modalContainer = document.querySelector("#modal-container")
+const resultTextarea = document.querySelector("#result-textarea")
+
+
+
+function openModal() {
+    const modalContainer = document.querySelector("#modal-container")
+    const htmlBody = document.querySelector("#body")
+
+    modalContainer.classList.toggle("display-flex")
+
+    htmlBody.classList.toggle("disable-scrolling")
+
+    
+    resultTextarea.innerHTML = normalInput.innerHTML
+}
+
+const fullViewBtn = document.querySelector("#full-view-btn")
+const closeModalBtn = document.querySelector("#close-modal-btn")
+
+
+fullViewBtn.addEventListener("click", () => { openModal() })
+
+closeModalBtn.addEventListener("click", () => { openModal() })
+
+
