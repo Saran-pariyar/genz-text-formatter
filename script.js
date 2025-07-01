@@ -196,4 +196,10 @@ fullViewBtn.addEventListener("click", () => { openModal() })
 
 closeModalBtn.addEventListener("click", () => { openModal() })
 
+// Basic text input optoins 
 
+const clearInputBtn = document.querySelector("#clear-input-btn")
+
+clearInputBtn.addEventListener("click", ()=>{
+    normalInput.innerHTML = ""
+})
