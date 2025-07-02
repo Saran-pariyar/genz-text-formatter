@@ -168,6 +168,53 @@ btnBoldRandomLetters.addEventListener("click", () => {
     normalInput.innerHTML = result; 
 });
 
+// bold with line break 
+const btnBoldWithLineBreak = document.querySelector(".bold-with-line-break");
+
+btnBoldWithLineBreak.addEventListener("click", () => {
+    const text = normalInput.innerText;
+
+    
+    const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
+
+    // bold 
+    function boldRandomLetters(str) {
+        const words = str.split(/\s+/);
+
+        function getRandomIndexes(length, count) {
+            const indexes = new Set();
+            while (indexes.size < count) {
+                indexes.add(Math.floor(Math.random() * length));
+            }
+            return Array.from(indexes);
+        }
+
+        return words.map(word => {
+            if (word.length <= 2) return word;
+
+            const boldCount = word.length >= 5 ? 3 : 2;
+            const indexesToBold = getRandomIndexes(word.length, boldCount);
+
+            let newWord = '';
+            for (let i = 0; i < word.length; i++) {
+                if (indexesToBold.includes(i)) {
+                    newWord += `<b>${word[i]}</b>`;
+                } else {
+                    newWord += word[i];
+                }
+            }
+            return newWord;
+        }).join(' ');
+    }
+
+    
+    const resultHTML = sentences.map(sentence => {
+        const bolded = boldRandomLetters(sentence.trim());
+        return `<div style="margin-bottom: 1rem;">${bolded}</div>`;
+    }).join('');
+
+    normalInput.innerHTML = resultHTML;
+});
 
 
 // modal scripts

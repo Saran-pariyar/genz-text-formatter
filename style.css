@@ -131,6 +131,34 @@ nav {
 
 /* Text Format Section  */
 
+#basic-input, #result-textarea{
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#basic-input::-webkit-scrollbar,
+#result-textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+#basic-input::-webkit-scrollbar-track,
+#result-textarea::-webkit-scrollbar-track {
+  background: #1f2937; 
+  border-radius: 5px;
+}
+
+#basic-input::-webkit-scrollbar-thumb,
+#result-textarea::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 10px;
+  border: 2px solid #1f2937;
+}
+
+#basic-input::-webkit-scrollbar-thumb:hover,
+#result-textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af; 
+}
+
+
 .text-format-section {
   padding: 2rem 1rem;
 }
