@@ -77,17 +77,22 @@ const btnLowerCase = document.querySelector("#btn-lowercase")
 btnLowerCase.addEventListener("click", ()=>{
     
    const result =  liveText.toLowerCase();
-    normalInput.innerHTML = result;
+    normalInput.innerText = result;
     
     
 })
 
 
-const btnCapitalize = document.querySelector("#btn-capitalize");
+const btnCapitalizeSentences = document.querySelector("#btn-capitalize");
 
-btnCapitalize.addEventListener("click", () => {
+btnCapitalizeSentences.addEventListener("click", () => {
     const text = normalInput.innerText;
-    const result = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+
+    // Match each sentence and capitalize its first letter
+    const result = text
+        .toLowerCase()
+        .replace(/(^\s*\w|[.!?]\s*\w)/g, char => char.toUpperCase());
+
     normalInput.innerText = result;
 });
 
@@ -216,6 +221,48 @@ btnBoldWithLineBreak.addEventListener("click", () => {
     normalInput.innerHTML = resultHTML;
 });
 
+//read text
+/*
+const btnReadText = document.querySelector("#btn-read-text");
+let isSpeaking = false;
+let currentSpeech;
+
+btnReadText.addEventListener("click", () => {
+    
+    const text = normalInput.innerText;
+if(!isSpeaking ){
+    isSpeaking = true;
+        // Cancel any ongoing speech
+    window.speechSynthesis.cancel();
+
+    // Create new speech instance
+    currentSpeech = new SpeechSynthesisUtterance(text);
+    currentSpeech.lang = "en-US"; // You can change this if needed
+
+    window.speechSynthesis.speak(currentSpeech);
+    btnReadText.innerText = "Stop";
+
+
+    currentSpeech.onend = () =>{
+        isSpeaking = false;
+        btnReadText.innerText = "Read Text"
+    }
+
+    
+
+
+    
+} else{
+    if(windows.speechSynthesis.speaking){
+    btnReadText.innerText = "Stop";
+    window.speechSynthesis.cancel();
+    }
+    alert("Going")
+
+}
+  
+});
+*/
 
 // modal scripts
 const modalContainer = document.querySelector("#modal-container")
