@@ -36,7 +36,7 @@ const normalInput = document.getElementById("basic-input");
 
 normalInput.addEventListener("input", () => {
     if (normalInput.innerText.trim() === "") {
-        normalInput.innerHTML = ""; 
+        normalInput.innerHTML = "";
     }
 });
 
@@ -58,93 +58,91 @@ normalInput.addEventListener("input", () => {
 })
 
 
-function formatText(action){
+function formatText(action) {
     let result = normalInput.innerText;
-switch(action){
+    switch (action) {
 
-    case "uppercase":
-        result = liveText.toUpperCase();
-        break;
-    
-    case "lowercase":
-        result = liveText.toLowerCase();
-        break;
+        case "uppercase":
+            result = liveText.toUpperCase();
+            break;
 
-    case "capitalize":
-        result = liveText.toLowerCase()
-        .replace(/(^\s*\w|[.!?]\s*\w)/g, char => char.toUpperCase());
-        break;
+        case "lowercase":
+            result = liveText.toLowerCase();
+            break;
 
-    case "capitalizeEveryWord":
-        result = liveText.toLowerCase()
-        .split(" ")
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" "); 
-        break;
-    
-    case "removeMultipleSpace":
-        result = liveText.replace(/\s+/g, ' ').trim();
-        break;
-    
-    case "lineBreakAfterSentence":
-        const sentences = liveText.match(/[^.!?]+[.!?]*\s*/g) || [text];
-        result = sentences.map(s => s.trim()).join('\n \n');
-        break;
+        case "capitalize":
+            result = liveText.toLowerCase()
+                .replace(/(^\s*\w|[.!?]\s*\w)/g, char => char.toUpperCase());
+            break;
 
-    case "boldRandomLetters":
-        result = boldRandomLettersFunction(liveText);
-        
-        break;
+        case "capitalizeEveryWord":
+            result = liveText.toLowerCase()
+                .split(" ")
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ");
+            break;
+
+        case "removeMultipleSpace":
+            result = liveText.replace(/\s+/g, ' ').trim();
+            break;
+
+        case "lineBreakAfterSentence":
+            const sentences = liveText.match(/[^.!?]+[.!?]*\s*/g) || [text];
+            result = sentences.map(s => s.trim()).join('\n \n');
+            break;
+
+        case "boldRandomLetters":
+            result = boldRandomLettersFunction(liveText);
+            break;
 
 
-    default:
-        break;   
+        default:
+            break;
+    }
+    normalInput.innerHTML = result;
+
 }
-normalInput.innerHTML = result;
 
-}
+function boldRandomLettersFunction(str) {
+    const words = str.split(/\s+/);
 
-  function boldRandomLettersFunction(str) {
-        const words = str.split(/\s+/);
-
-        function getRandomIndexes(length, count) {
-            const indexes = new Set();
-            while (indexes.size < count) {
-                indexes.add(Math.floor(Math.random() * length));
-            }
-            return Array.from(indexes);
+    function getRandomIndexes(length, count) {
+        const indexes = new Set();
+        while (indexes.size < count) {
+            indexes.add(Math.floor(Math.random() * length));
         }
-
-        return words.map(word => {
-            if (word.length <= 2) return word;
-
-            const boldCount = word.length >= 5 ? 3 : 2;
-            const indexesToBold = getRandomIndexes(word.length, boldCount);
-
-            let newWord = '';
-            for (let i = 0; i < word.length; i++) {
-                if (indexesToBold.includes(i)) {
-                    newWord += `<b>${word[i]}</b>`;
-                } else {
-                    newWord += word[i];
-                }
-            }
-            return newWord;
-        }).join(' ');
+        return Array.from(indexes);
     }
 
+    return words.map(word => {
+        if (word.length <= 2) return word;
 
-// alert(textData)
+        const boldCount = word.length >= 5 ? 3 : 2;
+        const indexesToBold = getRandomIndexes(word.length, boldCount);
+
+        let newWord = '';
+        for (let i = 0; i < word.length; i++) {
+            if (indexesToBold.includes(i)) {
+                newWord += `<b>${word[i]}</b>`;
+            } else {
+                newWord += word[i];
+            }
+        }
+        return newWord;
+    }).join(' ');
+}
+
+
 const btnUpperCase = document.querySelector("#btn-uppercase")
 btnUpperCase.addEventListener("click", () => { formatText("uppercase") })
 
 
 const btnLowerCase = document.querySelector("#btn-lowercase")
-btnLowerCase.addEventListener("click", () => {    formatText("lowercase")})
+btnLowerCase.addEventListener("click", () => { formatText("lowercase") })
 
 
 const btnCapitalizeSentences = document.querySelector("#btn-capitalize");
-btnCapitalizeSentences.addEventListener("click", () => { formatText("capitalize")});
+btnCapitalizeSentences.addEventListener("click", () => { formatText("capitalize") });
 
 
 const btnCapitalizeWords = document.querySelector("#btn-capitalize-words");
@@ -153,15 +151,15 @@ btnCapitalizeWords.addEventListener("click", () => { formatText("capitalizeEvery
 
 
 const btnRemoveSpace = document.querySelector("#btn-remove-space");
-btnRemoveSpace.addEventListener("click", () => {    formatText("removeMultipleSpace") });
+btnRemoveSpace.addEventListener("click", () => { formatText("removeMultipleSpace") });
 
 // ADVANCED FORMAT OPTOINS 
 
 const btnLineBreakSentences = document.querySelector("#btn-line-break-sentences");
-btnLineBreakSentences.addEventListener("click", () => {    formatText("lineBreakAfterSentence") });
+btnLineBreakSentences.addEventListener("click", () => { formatText("lineBreakAfterSentence") });
 
 const btnBoldRandomLetters = document.querySelector("#btn-bold-random-letters");
-btnBoldRandomLetters.addEventListener("click", () => {    formatText("boldRandomLetters") });
+btnBoldRandomLetters.addEventListener("click", () => { formatText("boldRandomLetters") });
 
 // bold with line break 
 const btnBoldWithLineBreak = document.querySelector(".bold-with-line-break");
