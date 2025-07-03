@@ -35,11 +35,11 @@ const formatButtons = document.querySelectorAll('.format-btn');
 
 // show placeholder again if it's empty.
 
-const editableDiv = document.getElementById("basic-input");
+const normalInput = document.getElementById("basic-input");
 
-editableDiv.addEventListener("input", () => {
-    if (editableDiv.innerText.trim() === "") {
-        editableDiv.innerHTML = ""; // Ensure it's really empty
+normalInput.addEventListener("input", () => {
+    if (normalInput.innerText.trim() === "") {
+        normalInput.innerHTML = ""; // Ensure it's really empty
     }
 });
 
@@ -47,36 +47,63 @@ editableDiv.addEventListener("input", () => {
 // FORMATTING 
 
 
-const normalInput = document.querySelector("#basic-input")
+// const normalInput = document.querySelector("#basic-input")
 
 
 
 // const textData = "";
-const textData = editableDiv.innerText; // plain readable text
-// const htmlData = editableDiv.innerHTML; // raw HTML with styles
+const textData = normalInput.innerText; // plain readable text
+// const htmlData = normalInput.innerHTML; // raw HTML with styles
 let liveText;
 
 normalInput.addEventListener("input", () => {
-    liveText = editableDiv.innerText;
+    liveText = normalInput.innerText;
 
 })
 
+
+
+function formatText(action){
+    let result = normalInput.innerText;
+switch(action){
+
+    case "uppercase":
+        result = liveText.toUpperCase();
+        // normalInput.innerHTML = result;
+        break;
+    
+    case "lowercase":
+     result = liveText.toLowerCase();
+    break;
+
+    case "capitalize":
+        result = liveText.toLowerCase()
+        .replace(/(^\s*\w|[.!?]\s*\w)/g, char => char.toUpperCase());
+
+        break;
+
+
+    default:
+        break;   
+
+}
+normalInput.innerHTML = result;
+
+}
 // alert(textData)
 const btnUpperCase = document.querySelector("#btn-uppercase")
 
+
 btnUpperCase.addEventListener("click", () => {
-
-    const result = liveText.toUpperCase();
-    normalInput.innerHTML = result;
-
-
+    formatText("uppercase")
 })
+
 
 const btnLowerCase = document.querySelector("#btn-lowercase")
 btnLowerCase.addEventListener("click", () => {
 
-    const result = liveText.toLowerCase();
-    normalInput.innerText = result;
+    formatText("lowercase")
+    
 
 
 })
@@ -85,14 +112,7 @@ btnLowerCase.addEventListener("click", () => {
 const btnCapitalizeSentences = document.querySelector("#btn-capitalize");
 
 btnCapitalizeSentences.addEventListener("click", () => {
-    const text = normalInput.innerText;
-
-    // Match each sentence and capitalize its first letter
-    const result = text
-        .toLowerCase()
-        .replace(/(^\s*\w|[.!?]\s*\w)/g, char => char.toUpperCase());
-
-    normalInput.innerText = result;
+    formatText("capitalize")
 });
 
 
@@ -220,7 +240,7 @@ btnBoldWithLineBreak.addEventListener("click", () => {
     normalInput.innerHTML = resultHTML;
 });
 
-
+/*
 //read text *******************************
 
 const btnReadText = document.querySelector("#btn-read-text");
@@ -262,6 +282,7 @@ btnReadText.addEventListener("click", () => {
     }
 
 });
+*/
 // *******************************
 
 
