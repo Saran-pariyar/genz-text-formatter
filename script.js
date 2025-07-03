@@ -38,9 +38,9 @@ const formatButtons = document.querySelectorAll('.format-btn');
 const editableDiv = document.getElementById("basic-input");
 
 editableDiv.addEventListener("input", () => {
-  if (editableDiv.innerText.trim() === "") {
-    editableDiv.innerHTML = ""; // Ensure it's really empty
-  }
+    if (editableDiv.innerText.trim() === "") {
+        editableDiv.innerHTML = ""; // Ensure it's really empty
+    }
 });
 
 
@@ -56,29 +56,29 @@ const textData = editableDiv.innerText; // plain readable text
 // const htmlData = editableDiv.innerHTML; // raw HTML with styles
 let liveText;
 
-normalInput.addEventListener("input", ()=>{
-       liveText = editableDiv.innerText;
+normalInput.addEventListener("input", () => {
+    liveText = editableDiv.innerText;
 
 })
 
 // alert(textData)
 const btnUpperCase = document.querySelector("#btn-uppercase")
 
-btnUpperCase.addEventListener("click", ()=>{
-    
-   const result =  liveText.toUpperCase();
+btnUpperCase.addEventListener("click", () => {
+
+    const result = liveText.toUpperCase();
     normalInput.innerHTML = result;
-    
-    
+
+
 })
 
 const btnLowerCase = document.querySelector("#btn-lowercase")
-btnLowerCase.addEventListener("click", ()=>{
-    
-   const result =  liveText.toLowerCase();
+btnLowerCase.addEventListener("click", () => {
+
+    const result = liveText.toLowerCase();
     normalInput.innerText = result;
-    
-    
+
+
 })
 
 
@@ -113,7 +113,7 @@ const btnRemoveSpace = document.querySelector("#btn-remove-space");
 
 btnRemoveSpace.addEventListener("click", () => {
     const text = normalInput.innerText;
-    const result = text.replace(/\s+/g, ' ').trim(); 
+    const result = text.replace(/\s+/g, ' ').trim();
     normalInput.innerText = result;
 });
 
@@ -127,7 +127,7 @@ const btnLineBreakSentences = document.querySelector("#btn-line-break-sentences"
 btnLineBreakSentences.addEventListener("click", () => {
     const text = normalInput.innerText;
     // Split text into sentences using regex, keeping the punctuation
-        const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
+    const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
 
     // Join sentences with a newline character
     const result = sentences.map(s => s.trim()).join('\n \n');
@@ -169,7 +169,7 @@ btnBoldRandomLetters.addEventListener("click", () => {
     }
 
     const result = boldRandomLetters(text);
-    normalInput.innerHTML = result; 
+    normalInput.innerHTML = result;
 });
 
 // bold with line break 
@@ -178,7 +178,7 @@ const btnBoldWithLineBreak = document.querySelector(".bold-with-line-break");
 btnBoldWithLineBreak.addEventListener("click", () => {
     const text = normalInput.innerText;
 
-    
+
     const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
 
     // bold 
@@ -211,7 +211,7 @@ btnBoldWithLineBreak.addEventListener("click", () => {
         }).join(' ');
     }
 
-    
+
     const resultHTML = sentences.map(sentence => {
         const bolded = boldRandomLetters(sentence.trim());
         return `<div style="margin-bottom: 1rem;">${bolded}</div>`;
@@ -228,39 +228,39 @@ let isSpeaking = false;
 let currentSpeech;
 
 btnReadText.addEventListener("click", () => {
-    
+
     const text = normalInput.innerText;
-if(!isSpeaking ){
-    isSpeaking = true;
+    if (!isSpeaking) {
+        isSpeaking = true;
         // Cancel any ongoing speech
-    window.speechSynthesis.cancel();
+        window.speechSynthesis.cancel();
 
-    // Create new speech instance
-    currentSpeech = new SpeechSynthesisUtterance(text);
-    currentSpeech.lang = "en-US"; // You can change this if needed
+        // Create new speech instance
+        currentSpeech = new SpeechSynthesisUtterance(text);
+        currentSpeech.lang = "en-US"; // You can change this if needed
 
-    window.speechSynthesis.speak(currentSpeech);
-    btnReadText.innerText = "Stop";
+        window.speechSynthesis.speak(currentSpeech);
+        btnReadText.innerText = "Stop";
 
 
-    currentSpeech.onend = () =>{
-        isSpeaking = false;
-        btnReadText.innerText = "Read Text"
+        currentSpeech.onend = () => {
+            isSpeaking = false;
+            btnReadText.innerText = "Read Text"
+        }
+
+
+
+
+
+    } else {
+        if (windows.speechSynthesis.speaking) {
+            btnReadText.innerText = "Stop";
+            window.speechSynthesis.cancel();
+        }
+        alert("Going")
+
     }
 
-    
-
-
-    
-} else{
-    if(windows.speechSynthesis.speaking){
-    btnReadText.innerText = "Stop";
-    window.speechSynthesis.cancel();
-    }
-    alert("Going")
-
-}
-  
 });
 // *******************************
 
@@ -279,7 +279,7 @@ function openModal() {
 
     htmlBody.classList.toggle("disable-scrolling")
 
-    
+
     resultTextarea.innerHTML = normalInput.innerHTML
 }
 
@@ -295,7 +295,7 @@ closeModalBtn.addEventListener("click", () => { openModal() })
 
 const clearInputBtn = document.querySelector("#clear-input-btn")
 
-clearInputBtn.addEventListener("click", ()=>{
+clearInputBtn.addEventListener("click", () => {
     normalInput.innerHTML = ""
 })
 
@@ -303,12 +303,12 @@ clearInputBtn.addEventListener("click", ()=>{
 // copy btn
 const basicCopyBtn = document.querySelector("#basic-copy-btn");
 
-basicCopyBtn.addEventListener("click", ()=>{
+basicCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(normalInput.innerText)
 })
 
 const modalCopyBtn = document.querySelector("#modal-copy-btn");
 
-modalCopyBtn.addEventListener("click", ()=>{
+modalCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(normalInput.innerText)
 })

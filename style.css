@@ -37,9 +37,8 @@ nav {
 
   backdrop-filter: blur(10px);
 }
-#navbar{
+#navbar {
   transition: 1s all;
-  
 }
 /* .navbar-bottom-border{
   border-bottom: 2px solid var(--heading-text-color);
@@ -84,10 +83,10 @@ nav {
   background-color: var(--text-white);
 }
 @media (max-width: 768px) {
-  .menu-icon-container{
+  .menu-icon-container {
     display: flex;
   }
-  .nav-list-container{
+  .nav-list-container {
     display: none;
   }
 }
@@ -131,7 +130,8 @@ nav {
 
 /* Text Format Section  */
 
-#basic-input, #result-textarea{
+#basic-input,
+#result-textarea {
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -142,7 +142,7 @@ nav {
 
 #basic-input::-webkit-scrollbar-track,
 #result-textarea::-webkit-scrollbar-track {
-  background: #1f2937; 
+  background: #1f2937;
   border-radius: 5px;
 }
 
@@ -155,9 +155,8 @@ nav {
 
 #basic-input::-webkit-scrollbar-thumb:hover,
 #result-textarea::-webkit-scrollbar-thumb:hover {
-  background-color: #9ca3af; 
+  background-color: #9ca3af;
 }
-
 
 .text-format-section {
   padding: 2rem 1rem;
@@ -192,7 +191,6 @@ nav {
   color: var(--text-white);
   padding: 0.5rem;
   display: block;
-  
 }
 .input-textarea:empty::before {
   content: attr(data-placeholder);
@@ -200,7 +198,7 @@ nav {
   pointer-events: none;
   font-style: italic;
 }
-.input-textarea:focus{
+.input-textarea:focus {
   outline: none;
 }
 /* .input-textarea::placeholder{
@@ -242,14 +240,12 @@ nav {
 }
 
 @media (max-width: 768px) {
-
   .text-format-container {
     flex-direction: column;
   }
-.input-textarea {
-  height: 50vh;
-  
-}
+  .input-textarea {
+    height: 50vh;
+  }
 }
 @media (max-width: 1024px) {
   .format-input-btn-section button {
@@ -281,74 +277,69 @@ nav {
 }
 
 .format-btn {
-   border : 2px solid var(--text-white) ;
-  color: var(--text-white); 
-  
+  border: 2px solid var(--text-white);
+  color: var(--text-white);
+
   background-color: transparent;
-  
-  padding: .5rem 1rem;
+
+  padding: 0.5rem 1rem;
   font-weight: 500;
   border-radius: 10px;
-  transition: .3s all;
+  transition: 0.3s all;
 }
 
-.format-btn:hover{
- border : 2px solid var(--btn-pink-bg) ; 
+.format-btn:hover {
+  border: 2px solid var(--btn-pink-bg);
   color: var(--btn-pink-bg);
   background-color: var(--main-dark-blue-bg);
   cursor: pointer;
-
 }
 
 /* ADVANCED OPTION  */
 
-.advanced-formatting-container{
+.advanced-formatting-container {
   margin: 1.5rem 0;
 }
 
-
 /* MODAL SECTION */
-.modal-container{
+.modal-container {
   height: 100%;
   width: 100%;
   position: fixed;
   /* border : 2px solid red ; */
   z-index: 1000;
-  padding: 2rem; 
+  padding: 2rem;
   top: 0;
   left: 0;
   /* transition: .5s all; */
   backdrop-filter: blur(10px);
-  display : flex; 
-  justify-content: center; 
-  align-items : center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: none;
-
-  
 }
-.disable-scrolling{
+.disable-scrolling {
   overflow-y: hidden;
 }
-.display-flex{
+.display-flex {
   display: flex;
 }
 
-.close-modal-btn{
+.close-modal-btn {
   position: absolute;
   color: var(--text-white);
   top: 1rem;
   right: 1rem;
   font-size: 2rem;
   cursor: pointer;
-  transition: .3s all;
+  transition: 0.3s all;
 }
-.close-modal-btn:hover{
-color: var(--btn-pink-bg);
+.close-modal-btn:hover {
+  color: var(--btn-pink-bg);
 }
-.modal-content-section{
+.modal-content-section {
   /* border : 2px solid red ;  */
   padding: 1rem;
-  
 }
 
 .result-section {
@@ -367,25 +358,24 @@ color: var(--btn-pink-bg);
   padding: 0.5rem;
   min-width: 100%;
 }
-.result-section:focus{
+.result-section:focus {
   outline: none;
 }
-.modal-btn-container{
-display: flex;
-margin-top: 1rem;
-gap: 1rem;
-justify-content: center;
-flex-wrap: wrap;
+.modal-btn-container {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.modal-btn{
-font-weight: 500;
-margin-right: .5rem;
-display: inline-block;
+.modal-btn {
+  font-weight: 500;
+  margin-right: 0.5rem;
+  display: inline-block;
 }
 
-.modal-btn:hover{
+.modal-btn:hover {
   color: var(--text-white);
   border: 2px solid var(--text-white);
 }
-
