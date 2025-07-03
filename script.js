@@ -5,7 +5,6 @@ window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY) {
-        console.log("scrolling down");
         navbar.style.position = "relative";
         // navbar.style.top = "1";
 
@@ -221,8 +220,9 @@ btnBoldWithLineBreak.addEventListener("click", () => {
     normalInput.innerHTML = resultHTML;
 });
 
-//read text
-/*
+
+//read text *******************************
+
 const btnReadText = document.querySelector("#btn-read-text");
 let isSpeaking = false;
 let currentSpeech;
@@ -262,7 +262,8 @@ if(!isSpeaking ){
 }
   
 });
-*/
+// *******************************
+
 
 // modal scripts
 const modalContainer = document.querySelector("#modal-container")
@@ -296,4 +297,18 @@ const clearInputBtn = document.querySelector("#clear-input-btn")
 
 clearInputBtn.addEventListener("click", ()=>{
     normalInput.innerHTML = ""
+})
+
+
+// copy btn
+const basicCopyBtn = document.querySelector("#basic-copy-btn");
+
+basicCopyBtn.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(normalInput.innerText)
+})
+
+const modalCopyBtn = document.querySelector("#modal-copy-btn");
+
+modalCopyBtn.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(normalInput.innerText)
 })
