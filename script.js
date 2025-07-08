@@ -88,11 +88,14 @@ function formatText(action) {
 
         case "lineBreakAfterSentence":
             const sentences = liveText.match(/[^.!?]+[.!?]*\s*/g) || [text];
-            result = sentences.map(s => s.trim()).join('\n \n');
+            result = sentences.map(s => s.trim()).join('<br /> <br />');
             break;
 
         case "boldRandomLetters":
             result = boldRandomLettersFunction(liveText);
+            break;
+        case "removeNumbers":
+            result = liveText.replace(/\d+/g, '');
             break;
 
 
@@ -208,6 +211,11 @@ btnBoldWithLineBreak.addEventListener("click", () => {
 
     normalInput.innerHTML = resultHTML;
 });
+
+const removeNumbers = document.querySelector("#btn-remove-numbers")
+removeNumbers.addEventListener("click", ()=>{
+    formatText("removeNumbers")
+})
 
 /*
 //read text *******************************
